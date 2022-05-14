@@ -13,7 +13,8 @@ body {
 .wrapper {
     padding: 2rem;
     border-radius: 2%;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: black;
+    max-height: 42rem;
 }
 
 .wrapper__slider {
@@ -21,6 +22,7 @@ body {
     height: auto;
     margin-bottom: 1rem;
     overflow: hidden;
+    max-height: 32rem;
 }
 
 .slider {
@@ -34,8 +36,7 @@ body {
     object-fit: contain;
     width: calc(100% / 5);
     height: auto;
-    border-radius: 2%;
-    transition: opacity 1s, visibility 0s 1s;
+    transition: opacity 1s;
 }
 
 .wrapper__text {
@@ -61,6 +62,7 @@ body {
 .text {
     list-style: none;
     font-size: 1.5rem;
+    color: white;
     width: 50%;
     transition: all 800ms cubic-bezier(.770, .000, .175, 1.000);
 }
@@ -85,6 +87,10 @@ input {
     border-radius: 50%;
     cursor: pointer;
     transition: all 0.3s;
+}
+
+label:active>.button {
+    transform: scale(.75);
 }
 
 .button {
@@ -149,29 +155,6 @@ input {
     transition: all 1.5s;
 }
 
-
-
-@media (max-width: 768px) {
-    * {
-        font-size: .5rem;
-
-    }
-
-    .wrapper__text {
-        flex-direction: column;
-
-    }
-
-    .wrapper-meme {
-        order: 2;
-    }
-
-    .controls {
-        order: 1;
-        justify-content: center;
-    }
-}
-
 #slide_1:not(:checked)~.wrapper__slider>.slider>#image_1,
 #slide_1:not(:checked)~.wrapper__text>.wrapper-meme>.text-meme>#text_1 {
     opacity: 0;
@@ -200,4 +183,25 @@ input {
 #slide_5:not(:checked)~.wrapper__text .wrapper-meme .text-meme>#text_5 {
     opacity: 0;
     transition: all 1s;
+}
+
+@media (max-width: 768px) {
+    * {
+        font-size: .5rem;
+
+    }
+
+    .wrapper__text {
+        flex-direction: column;
+
+    }
+
+    .wrapper-meme {
+        order: 2;
+    }
+
+    .controls {
+        order: 1;
+        justify-content: center;
+    }
 }
