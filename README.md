@@ -1,1 +1,1 @@
-# cssMemSlider
+[cssMemSlider](http://unoname.github.io/cssMemSlider/cssMemSlider)
