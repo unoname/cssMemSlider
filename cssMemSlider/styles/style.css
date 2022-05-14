@@ -1,0 +1,207 @@
+body {
+    background-size: cover;
+    background-color: darkslategrey;
+}
+
+.container {
+    max-width: 42rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.wrapper {
+    padding: 2rem;
+    border-radius: 2%;
+    background-color: black;
+    max-height: 42rem;
+}
+
+.wrapper__slider {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    max-height: 32rem;
+}
+
+.slider {
+    display: flex;
+    width: calc(100% * 5);
+    line-height: 0;
+    transition: all 1s cubic-bezier(.770, .000, .175, 1.000);
+}
+
+.image {
+    object-fit: contain;
+    width: calc(100% / 5);
+    height: auto;
+    transition: opacity 1s;
+}
+
+.wrapper__text {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+
+.wrapper-meme {
+    width: 60%;
+    overflow: hidden;
+}
+
+.text-meme {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: calc(100% * 5);
+    transition: all 1s cubic-bezier(.770, .000, .175, 1.000);
+}
+
+.text {
+    list-style: none;
+    font-size: 1.5rem;
+    color: white;
+    width: 50%;
+    transition: all 800ms cubic-bezier(.770, .000, .175, 1.000);
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    min-width: 25%;
+    font-size: 0;
+    order: 2;
+}
+
+input {
+    visibility: hidden;
+}
+
+.controls label {
+    display: inline-block;
+    width: 2rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+label:active>.button {
+    transform: scale(.75);
+}
+
+.button {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    margin: 0 .5rem;
+    border-radius: 50%;
+    background-color: #e91e63;
+    opacity: 1;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.controls label:hover .button {
+    background-color: lime !important;
+    opacity: 2;
+}
+
+#slide_1:checked~.wrapper__text .controls label:nth-child(1) .button,
+#slide_2:checked~.wrapper__text .controls label:nth-child(2) .button,
+#slide_3:checked~.wrapper__text .controls label:nth-child(3) .button,
+#slide_4:checked~.wrapper__text .controls label:nth-child(4) .button,
+#slide_5:checked~.wrapper__text .controls label:nth-child(5) .button {
+    border: 2px solid rgb(223, 21, 48);
+    background: transparent !important;
+    opacity: 2;
+}
+
+#slide_1:checked~.wrapper__slider .slider,
+#slide_1:checked~.wrapper .wrapper__text .wrapper-meme .text-meme {
+    transform: translateX(0);
+    opacity: 2;
+    transition: all 1.5s;
+}
+
+#slide_2:checked~.wrapper__slider .slider,
+#slide_2:checked~.wrapper__text .wrapper-meme .text-meme {
+    transform: translateX(-20%);
+    opacity: 2;
+    transition: all 1.5s;
+}
+
+#slide_3:checked~.wrapper__slider .slider,
+#slide_3:checked~.wrapper__text .wrapper-meme .text-meme {
+    transform: translateX(-40%);
+    opacity: 2;
+    transition: all 1.5s;
+}
+
+#slide_4:checked~.wrapper__slider .slider,
+#slide_4:checked~.wrapper__text .wrapper-meme .text-meme {
+    transform: translateX(-60%);
+    opacity: 2;
+    transition: all 1.5s;
+}
+
+#slide_5:checked~.wrapper__slider .slider,
+#slide_5:checked~.wrapper__text .wrapper-meme .text-meme {
+    transform: translateX(-80%);
+    opacity: 2;
+    transition: all 1.5s;
+}
+
+#slide_1:not(:checked)~.wrapper__slider>.slider>#image_1,
+#slide_1:not(:checked)~.wrapper__text>.wrapper-meme>.text-meme>#text_1 {
+    opacity: 0;
+    transition: all 1s;
+}
+
+#slide_2:not(:checked)~.wrapper__slider>.slider>#image_2,
+#slide_2:not(:checked)~.wrapper__text .wrapper-meme>.text-meme>#text_2 {
+    opacity: 0;
+    transition: all 1s;
+}
+
+#slide_3:not(:checked)~.wrapper__slider>.slider>#image_3,
+#slide_3:not(:checked)~.wrapper__text>.wrapper-meme>.text-meme>#text_3 {
+    opacity: 0;
+    transition: all 1s;
+}
+
+#slide_4:not(:checked)~.wrapper__slider>.slider>#image_4,
+#slide_4:not(:checked)~.wrapper__text>.wrapper-meme .text-meme>#text_4 {
+    opacity: 0;
+    transition: all 1s;
+}
+
+#slide_5:not(:checked)~.wrapper__slider>.slider#image_5,
+#slide_5:not(:checked)~.wrapper__text .wrapper-meme .text-meme>#text_5 {
+    opacity: 0;
+    transition: all 1s;
+}
+
+@media (max-width: 768px) {
+    * {
+        font-size: .5rem;
+
+    }
+
+    .wrapper__text {
+        flex-direction: column;
+
+    }
+
+    .wrapper-meme {
+        order: 2;
+    }
+
+    .controls {
+        order: 1;
+        justify-content: center;
+    }
+}
