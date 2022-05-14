@@ -7,27 +7,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/style.css">
-    <script src="script.js"></script>
     <title>cssMemSlider</title>
 </head>
 
 <body>
     <div class="container">
         <div class="wrapper">
-            <div class="slide"></div>
-            <div class="slide"></div>
-            <div class="slide"></div>
-            <div class="slide"></div>
-            <div class="slide"></div>
+            <input class="radio" type="radio" name="slider" id="slide_1" checked>
+            <input class="radio" type="radio" name="slider" id="slide_2">
+            <input class="radio" type="radio" name="slider" id="slide_3">
+            <input class="radio" type="radio" name="slider" id="slide_4">
+            <input class="radio" type="radio" name="slider" id="slide_5">
+
+            <div class="wrapper__slider">
+                <div class="slider">
+                    <img class="image" src="images/1.jpg" alt="" id="image_1">
+                    <img class="image" src="images/2.jpg" alt="" id="image_2">
+                    <img class="image" src="images/3.jpg" alt="" id="image_3">
+                    <img class="image" src="images/4.png" alt="" id="image_4">
+                    <img class="image" src="images/5.jpg" alt="" id="image_5">
+                </div>
+            </div>
+            <div class="wrapper__text">
+                <div class="controls">
+                    <label for="slide_1">
+                        <div class="button"></div>
+                    </label>
+                    <label for="slide_2">
+                        <div class="button"></div>
+                    </label>
+                    <label for="slide_3">
+                        <div class="button"></div>
+                    </label>
+                    <label for="slide_4">
+                        <div class="button"></div>
+                    </label>
+                    <label for="slide_5">
+                        <div class="button"></div>
+                    </label>
+                </div>
+                <div class="wrapper-meme">
+                    <div class="text-meme">
+                        <li class="text" id="text_1">Козлом обычно называют того, кто нашел себе другую козу.</li>
+                        <li class="text" id="text_2">Не так страшна ошибка, как невозможность ее исправить.</li>
+                        <li class="text" id="text_3">Чтобы прослыть невоспитанным, достаточно сказать правду.</li>
+                        <li class="text" id="text_4">Чистая совесть - лучшее снотворное.</li>
+                        <li class="text" id="text_5">Береги зубы с молоду.</li>
+                    </div>
+                </div>
+
+            </div>
         </div>
-        <div class="text_meme"></div>
-        <div class="controls">
-            <div class="button"></div>
-            <div class="button"></div>
-            <div class="button"></div>
-            <div class="button"></div>
-            <div class="button"></div>
-        </div>
+
     </div>
 
 </body>
